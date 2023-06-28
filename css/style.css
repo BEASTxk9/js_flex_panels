@@ -1,0 +1,110 @@
+/* html skeleton */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: raleway;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+html{
+    background-color: #171717;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/* panels height, width, and content placement */
+.panels{
+    display: flex;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.panel{
+    background-color: #1717175d;
+    background-position: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    align-items: center;
+    text-shadow: black 0px 0px 10px;
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* transition called when open */
+    transition: 
+    font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
+}
+.panels::-webkit-scrollbar{
+    display: none;
+}
+
+/* panel bg images */
+.panel1{
+    background-image: url('https://i.postimg.cc/g2VJZjDq/prague-3010407-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.panel2{
+    background-image: url('https://i.postimg.cc/y6D0ShSm/fantasy-2861815-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.panel3{
+    background-image: url('https://i.postimg.cc/XJpBd3Xj/armageddon-2721568-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.panel4{
+    background-image: url('https://i.postimg.cc/SxkXVcjt/ancient-5302623-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.panel5{
+    background-image: url('https://i.postimg.cc/B6Lttgwt/jerusalem-1712855-1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* panel content */
+.panel p{
+    /* border: 1px red solid; */
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* first p tag */
+.panel p:nth-child(1){
+    transform: translateY(-100%);
+}
+/* active */
+.panel.open-active p:nth-child(1){
+    transform: translateY(0%);
+}
+
+/* second p tag */
+.panel p:nth-child(3){
+    transform: translateY(100%);
+}
+/* active */
+.panel.open-active p:nth-child(3){
+    transform: translateY(0%);
+}
+
+
+.panel p:nth-child(2){
+    font-size: 2rem;
+}
+
+/* all open */
+.panel.open{
+    flex: 5;
+    font-size: 2rem;
+}
